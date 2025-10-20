@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QuickPolls</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>QuickPolls</h1>
+      <p class="tagline">Create polls, vote, and see results after 24 hours.</p>
+    </header>
+
+    <main class="container">
+      <section id="create-poll" class="card">
+        <h2>Create a poll</h2>
+        <div class="form-row">
+          <label for="question">Question</label>
+          <input id="question" type="text" placeholder="What should we do for lunch?" />
+        </div>
+        <div class="form-row">
+          <label for="description">Description (optional)</label>
+          <textarea id="description" rows="2" placeholder="Add a short description"></textarea>
+        </div>
+        <div class="form-row">
+          <label>Options</label>
+          <div id="options-list" class="options-list"></div>
+          <button id="addOptionBtn" class="btn ghost" type="button">+ Add option</button>
+        </div>
+        <div class="hint">Polls automatically end 24 hours after creation.</div>
+        <div class="actions">
+          <button id="createPollBtn" class="btn primary" type="button">Create poll</button>
+        </div>
+      </section>
+
+      <section class="list-section">
+        <h2>Polls</h2>
+        <div id="pollsList" class="polls-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>QuickPolls — front-end prototype</span>
+    </footer>
+
+    <script defer src="src/app.js"></script>
+  </body>
+</html>
