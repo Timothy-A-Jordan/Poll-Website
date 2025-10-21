@@ -8,41 +8,69 @@
   </head>
   <body>
     <header class="site-header">
-      <h1>QuickPolls</h1>
-      <p class="tagline">Create polls, vote, and see results after 24 hours.</p>
+      <div class="container">
+        <h1>QuickPolls</h1>
+        <p class="tagline">Create polls, vote quickly, and see results.</p>
+      </div>
     </header>
 
     <main class="container">
-      <section id="create-poll" class="card">
-        <h2>Create a poll</h2>
+      <!-- Create Poll Card -->
+      <section class="card">
         <div class="form-row">
           <label for="question">Question</label>
-          <input id="question" type="text" placeholder="What should we do for lunch?" />
+          <input id="question" type="text" placeholder="What's your question?" maxlength="120" />
         </div>
         <div class="form-row">
           <label for="description">Description (optional)</label>
-          <textarea id="description" rows="2" placeholder="Add a short description"></textarea>
+          <textarea id="description" rows="3" placeholder="Give more context..."></textarea>
         </div>
         <div class="form-row">
           <label>Options</label>
           <div id="options-list" class="options-list"></div>
-          <button id="addOptionBtn" class="btn ghost" type="button">+ Add option</button>
+          <div class="actions">
+            <button id="addOptionBtn" type="button" class="btn ghost">Add option</button>
+          </div>
+          <p class="hint">At least 2 options, up to 6.</p>
         </div>
-        <div class="hint">Polls automatically end 24 hours after creation.</div>
         <div class="actions">
-          <button id="createPollBtn" class="btn primary" type="button">Create poll</button>
+          <button id="createPollBtn" type="button" class="btn primary">Create poll</button>
         </div>
       </section>
 
+      <!-- Stories (Following) -->
       <section class="list-section">
-        <h2>Polls</h2>
+        <h2 class="section-title">Following</h2>
+        <div id="storiesBar" class="stories"></div>
+      </section>
+
+      <!-- Interested (For You) -->
+      <section class="list-section">
+        <h2 class="section-title">For you</h2>
+        <div id="interestedList" class="polls-list"></div>
+      </section>
+
+      <!-- All Polls -->
+      <section class="list-section">
+        <h2 class="section-title">All polls</h2>
         <div id="pollsList" class="polls-list"></div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>QuickPolls — front-end prototype</span>
+      <div class="container">QuickPolls — front-end prototype</div>
     </footer>
+
+    <!-- Story Modal -->
+    <div id="storyModal" class="modal-overlay" aria-hidden="true">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title" id="storyTitle">Stories</div>
+          <button id="storyClose" class="btn ghost small" aria-label="Close">Close</button>
+        </div>
+        <div id="storyContent" class="modal-content"></div>
+      </div>
+    </div>
 
     <script defer src="src/app.js"></script>
   </body>
