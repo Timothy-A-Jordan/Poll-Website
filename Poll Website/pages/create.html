@@ -3,19 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>QuickPolls</title>
+    <title>Create a Poll • QuickPolls</title>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container">
         <h1>QuickPolls</h1>
-        <p class="tagline">Create polls, vote quickly, and see results.</p>
+        <p class="tagline">Create a new poll</p>
+        <div class="actions">
+          <button id="navToggle" class="hamburger" aria-label="Open menu">☰</button>
+          <a href="index.html" class="btn ghost small">Home</a>
+        </div>
       </div>
     </header>
 
     <main class="container">
-      <!-- Create Poll Card -->
       <section class="card">
         <div class="form-row">
           <label for="question">Question</label>
@@ -37,40 +40,27 @@
           <button id="createPollBtn" type="button" class="btn primary">Create poll</button>
         </div>
       </section>
-
-      <!-- Stories (Following) -->
-      <section class="list-section">
-        <h2 class="section-title">Following</h2>
-        <div id="storiesBar" class="stories"></div>
-      </section>
-
-      <!-- Interested (For You) -->
-      <section class="list-section">
-        <h2 class="section-title">For you</h2>
-        <div id="interestedList" class="polls-list"></div>
-      </section>
-
-      <!-- All Polls -->
-      <section class="list-section">
-        <h2 class="section-title">All polls</h2>
-        <div id="pollsList" class="polls-list"></div>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">QuickPolls — front-end prototype</div>
     </footer>
 
-    <!-- Story Modal -->
-    <div id="storyModal" class="modal-overlay" aria-hidden="true">
-      <div class="modal">
-        <div class="modal-header">
-          <div class="modal-title" id="storyTitle">Stories</div>
-          <button id="storyClose" class="btn ghost small" aria-label="Close">Close</button>
-        </div>
-        <div id="storyContent" class="modal-content"></div>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar" aria-hidden="true">
+      <div class="sidebar-header">
+        <div class="brand">QuickPolls</div>
+        <button id="navClose" class="btn ghost small" aria-label="Close">✕</button>
       </div>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="create.html">Create</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <a class="nav-link" href="settings.html">Settings</a>
+        <a class="nav-link disabled" href="#">Explore (soon)</a>
+      </nav>
     </div>
+    <div id="sidebarBackdrop" class="backdrop" aria-hidden="true"></div>
 
     <script defer src="src/app.js"></script>
   </body>

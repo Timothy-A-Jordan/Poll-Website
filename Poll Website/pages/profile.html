@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile • QuickPolls</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>QuickPolls</h1>
+        <p class="tagline">Your profile</p>
+        <div class="actions">
+          <button id="navToggle" class="hamburger" aria-label="Open menu">☰</button>
+          <a href="index.html" class="btn ghost small">Home</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Profile</h2>
+        <p class="hint">This is a placeholder page. Add profile details here.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">QuickPolls — front-end prototype</div>
+    </footer>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar" aria-hidden="true">
+      <div class="sidebar-header">
+        <div class="brand">QuickPolls</div>
+        <button id="navClose" class="btn ghost small" aria-label="Close">✕</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="create.html">Create</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <a class="nav-link" href="settings.html">Settings</a>
+        <a class="nav-link disabled" href="#">Explore (soon)</a>
+      </nav>
+    </div>
+    <div id="sidebarBackdrop" class="backdrop" aria-hidden="true"></div>
+
+    <script defer src="src/app.js"></script>
+  </body>
+</html>

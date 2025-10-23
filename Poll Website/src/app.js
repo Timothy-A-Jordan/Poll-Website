@@ -21,6 +21,11 @@
     storyContent: document.getElementById('storyContent'),
     storyClose: document.getElementById('storyClose'),
     storyTitle: document.getElementById('storyTitle'),
+    // Sidebar elements
+    navToggle: document.getElementById('navToggle'),
+    navClose: document.getElementById('navClose'),
+    sidebar: document.getElementById('sidebar'),
+    sidebarBackdrop: document.getElementById('sidebarBackdrop'),
   };
 
   // Utilities
@@ -429,6 +434,16 @@
     }
   }
   function rerenderAll(){ render(); renderInterested(); }
+
+  // Sidebar interactions
+  function openSidebar(){ if(!el.sidebar) return; el.sidebar.classList.add('open'); el.sidebar.setAttribute('aria-hidden','false'); if(el.sidebarBackdrop){ el.sidebarBackdrop.classList.add('open'); el.sidebarBackdrop.setAttribute('aria-hidden','false'); } }
+  function closeSidebar(){ if(!el.sidebar) return; el.sidebar.classList.remove('open'); el.sidebar.setAttribute('aria-hidden','true'); if(el.sidebarBackdrop){ el.sidebarBackdrop.classList.remove('open'); el.sidebarBackdrop.setAttribute('aria-hidden','true'); } }
+  if(el.navToggle) el.navToggle.addEventListener('click', openSidebar);
+  if(el.navClose) el.navClose.addEventListener('click', closeSidebar);
+  if(el.sidebarBackdrop) el.sidebarBackdrop.addEventListener('click', closeSidebar);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeSidebar(); });
+  // Close sidebar when clicking a nav link
+  if(el.sidebar){ el.sidebar.querySelectorAll('.nav-link').forEach(a=> a.addEventListener('click', closeSidebar)); }
 
   // Wire up
   if(el.addOptionBtn) el.addOptionBtn.addEventListener('click', ()=>{
